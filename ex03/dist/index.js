@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.logPerson = exports.persons = void 0;
-exports.persons /* <- Person[] */ = [
+exports.persons = [
     {
         name: 'Max Mustermann',
         age: 25,
@@ -23,8 +23,15 @@ exports.persons /* <- Person[] */ = [
         role: 'World saver'
     }
 ];
-function logPerson(user) {
-    console.log(` - ${user.name}, ${user.age}`);
+function logPerson(person) {
+    let additionalInformation;
+    if (person.role) {
+        additionalInformation = person.role;
+    }
+    else {
+        additionalInformation = person.occupation;
+    }
+    console.log(` - ${person.name}, ${person.age}, ${additionalInformation}`);
 }
 exports.logPerson = logPerson;
 exports.persons.forEach(logPerson);
