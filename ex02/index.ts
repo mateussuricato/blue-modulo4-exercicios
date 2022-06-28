@@ -1,13 +1,18 @@
-interface User {}
-
-interface Admin {}
-
-export type Person = {
+interface User {
   name: string;
   age: number;
   occupation?: string;
   role?: string;
-};
+}
+
+interface Admin {
+  name: string;
+  age: number;
+  occupation?: string;
+  role?: string;
+}
+
+export type Person = User | Admin;
 
 export const persons: Person[] /* <- Person[] */ = [
   {
